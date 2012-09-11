@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+cd /app 2>&1 >/dev/null
+curl -s $1 | tar xz
+cd - 2>&1 >/dev/null

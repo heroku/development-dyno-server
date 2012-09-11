@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+stty -echo raw >/dev/null 2>&1
+
+bin=$(dirname $0)
+root=$(dirname $bin)
+
+$bin/fetch-slug $SLUG_URL
+source $root/.profile
+$bin/development-server
