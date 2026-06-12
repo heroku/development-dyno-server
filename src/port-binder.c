@@ -55,6 +55,7 @@ int bind(int socket, const struct sockaddr *address, socklen_t address_len) {
       printf("going for it\n");
       return(bind_real(socket, (struct sockaddr *)address_un, strlen(address_un->sun_path)+sizeof(address_un->sun_family)));
     }
+    free(address_un);
   }
 
   return(bind_real(socket, address, address_len));
